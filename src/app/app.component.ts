@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { Ejemplo1Component } from './formulario/ejemplo1/ejemplo1.component';
 
 @Component({

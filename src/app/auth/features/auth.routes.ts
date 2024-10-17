@@ -8,5 +8,9 @@ export default[
     {
         path: 'sing-up',
         loadComponent:()=> import('./sing-up/sing-up.component'),
-    }
+    },
+    {
+        path: 'zodiaco',
+        loadComponent:()=> import('./zodiaco/zodiaco.component'),
+    },
 ]

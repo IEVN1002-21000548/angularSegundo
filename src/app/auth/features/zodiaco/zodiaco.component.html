@@ -1,0 +1,66 @@
+  <div style="display: flex; justify-content: space-between;">
+    <!-- Formulario en la mitad izquierda -->
+    <div style="width: 49%;">
+        <form style="background-color: gray;" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <div class="grid gap-6 mb-6">
+                <div>
+                    <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombres</label>
+                    <input type="text" id="nombre" formControlName="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nombre" required />
+                </div>
+                <div>
+                    <label for="apaterno" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido Paterno</label>
+                    <input type="text" id="apaterno" formControlName="apaterno" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Apaterno" required />
+                </div>
+                <div>
+                    <label for="amaterno" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido Materno</label>
+                    <input type="text" id="amaterno" formControlName="amaterno" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Amaterno" required />
+                </div>
+            </div>
+
+            <h1 style="font-style: italic; color: white; text-align: center;">FECHA DE NACIMIENTO</h1>
+
+            <div class="grid gap-6 mb-6 md:grid-cols-3">
+                <div>
+                    <label for="dia" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Día</label>
+                    <input type="number" id="dia" formControlName="dia" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="**" required />
+                </div>
+                <div>
+                    <label for="mes" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mes</label>
+                    <input type="number" id="mes" formControlName="mes" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="**" required />
+                </div>
+                <div>
+                    <label for="anio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Año</label>
+                    <input type="number" id="anio" formControlName="anio" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="****" required />
+                </div>
+            </div>
+
+            <h1 style="font-style: italic; color: white; text-align: center;">SEXO</h1>
+            <div class="flex items-start mb-6">
+                <div class="flex items-center h-5">
+                    <input id="masculino" type="radio" formControlName="genero" value="masculino" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
+                </div>
+                <label for="masculino" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Masculino</label>
+            </div>
+            <div class="flex items-start mb-6">
+                <div class="flex items-center h-5">
+                    <input id="femenino" type="radio" formControlName="genero" value="femenino" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
+                </div>
+                <label for="femenino" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Femenino</label>
+            </div>
+
+            <!-- Botón de enviar -->
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+        </form>
+    </div>
+
+    <!-- Parte derecha de la pantalla para mostrar "Hola" -->
+    <div style="width: 49%; text-align: center; align-items: center;">
+        <h1 *ngIf="persona.nombre"> HOLA {{persona.nombre}} {{persona.apaterno}} {{persona.amaterno}}</h1>
+        <h1 *ngIf="persona.anio"> Tu edad es: {{edad}}</h1>
+        <h1 *ngIf="persona.nombre"> Tu animal es {{animal}}</h1>
+        <img *ngIf="persona.nombre" src="{{fotoanimal}}" alt="" width="300" height="200">
+    </div>
+</div>
+
+  
+
